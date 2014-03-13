@@ -62,13 +62,16 @@ public enum Digit {
         return this.value;
     }
 
+    public boolean isValid() {
+        return this != INVALID;
+    }
+
     private boolean has(String rawString) {
         return this.digit.equals(rawString);
     }
 
-    public boolean isValid() {
-        return this != INVALID;
-    }
+    public static int WIDTH = 3;
+    public static int HEIGHT = 4;
 
     public static Digit digitFor(final String rawString) {
         List<Digit> allDigits = Lists.newArrayList(values());
@@ -82,7 +85,4 @@ public enum Digit {
 
         return aDigit.or(INVALID);
     }
-
-    public static int WIDTH = 3;
-    public static int HEIGHT = 4;
 }

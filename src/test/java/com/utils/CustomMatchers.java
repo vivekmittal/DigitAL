@@ -19,4 +19,18 @@ public class CustomMatchers {
             }
         };
     }
+
+    public static Matcher<? super Account> valid() {
+        return new TypeSafeMatcher<Account>() {
+            @Override
+            protected boolean matchesSafely(Account account) {
+                return account.isValid();
+            }
+
+            @Override
+            public void describeTo(Description description) {
+                description.appendText("The account number to be valid");
+            }
+        };
+    }
 }
