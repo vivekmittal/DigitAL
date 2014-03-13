@@ -1,16 +1,17 @@
-package com;
+package com.bank;
 
+import com.bank.Digit;
 import com.google.common.base.Splitter;
 
 import java.util.List;
 
-import static com.Account.NUMBER_OF_DIGITS_IN_ACCOUNT_NUMBER;
+import static com.bank.Account.NUMBER_OF_DIGITS_IN_ACCOUNT_NUMBER;
 import static com.google.common.collect.Lists.newArrayList;
 
-public class DigitParser {
+public class Digits {
     private String rawDigits;
 
-    public DigitParser(String rawDigits) {
+    public Digits(String rawDigits) {
         this.rawDigits = rawDigits;
     }
 
@@ -27,7 +28,7 @@ public class DigitParser {
     }
 
     private Digit digitAt(int position) {
-        List<String> strings = Splitter.fixedLength(3).splitToList(rawDigits);
+        List<String> strings = Splitter.fixedLength(Digit.WIDTH).splitToList(rawDigits);
 
         return Digit.digitFor(
                 strings.get(position) +

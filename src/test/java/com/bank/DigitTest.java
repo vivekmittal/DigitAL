@@ -1,8 +1,9 @@
-package com;
+package com.bank;
 
+import com.bank.Digit;
 import org.testng.annotations.Test;
 
-import static com.Digit.*;
+import static com.bank.Digit.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
@@ -127,5 +128,6 @@ public class DigitTest {
 
         assertThat(digit, is(INVALID));
         assertThat(digit.value(), is(-1));
+        assertThat(digit.isValid(), is(false));
     }
 }

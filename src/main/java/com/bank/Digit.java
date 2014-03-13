@@ -1,4 +1,4 @@
-package com;
+package com.bank;
 
 import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
@@ -66,6 +66,10 @@ public enum Digit {
         return this.digit.equals(rawString);
     }
 
+    public boolean isValid() {
+        return this != INVALID;
+    }
+
     public static Digit digitFor(final String rawString) {
         List<Digit> allDigits = Lists.newArrayList(values());
 
@@ -78,4 +82,7 @@ public enum Digit {
 
         return aDigit.or(INVALID);
     }
+
+    public static int WIDTH = 3;
+    public static int HEIGHT = 4;
 }
