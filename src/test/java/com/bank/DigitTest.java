@@ -1,6 +1,5 @@
 package com.bank;
 
-import com.bank.Digit;
 import org.testng.annotations.Test;
 
 import static com.bank.Digit.*;
@@ -121,8 +120,8 @@ public class DigitTest {
 
     public void invalidDigit() {
         String crapData =  "   " +
-                "|_|" +
-                " _|";
+                           "|_|" +
+                           " _ ";
 
         Digit digit = Digit.digitFor(crapData);
 

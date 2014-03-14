@@ -1,6 +1,6 @@
 package com.bank;
 
-import com.utils.Utils;
+import com.utils.IOUtils;
 import com.google.common.base.Function;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Collections2;
@@ -21,7 +21,7 @@ public class Accounts {
     };
 
     public static Collection<Account> from(InputStream is) throws IOException {
-        String stringifiedStream = Utils.stringify(is);
+        String stringifiedStream = IOUtils.stringify(is);
 
         List<String> rawAccountNumbers = Splitter.fixedLength(ACCOUNT_NUMBER_RAW_LENGTH).splitToList(stringifiedStream);
 

@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class App {
-    private static final String FILE_NAME = "data1.txt";
+    private static final String FILE_NAME = "data.txt";
     private static final Logger LOGGER = Logger.getLogger("Bank");
 
     public static void main(String[] args) {

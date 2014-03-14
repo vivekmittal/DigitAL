@@ -1,13 +1,11 @@
 package com.utils;
 
-import org.apache.commons.io.IOUtils;
-
 import java.io.IOException;
 import java.io.InputStream;
 
-public class Utils {
+public class IOUtils {
     public static String stringify(InputStream input) throws IOException {
-        String rawDigits = IOUtils.toString(input);
+        String rawDigits = org.apache.commons.io.IOUtils.toString(input);
 
         return removeCRLF(rawDigits);
     }

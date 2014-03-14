@@ -9,11 +9,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 @Test
-public class UtilsTest {
+public class IOUtilsTest {
     public void stringifyStream() throws IOException {
         String anyString = "Any String";
 
-        String stringifiedStream = Utils.stringify(new ByteArrayInputStream(anyString.getBytes()));
+        String stringifiedStream = IOUtils.stringify(new ByteArrayInputStream(anyString.getBytes()));
 
         assertThat(stringifiedStream, is(anyString));
     }
@@ -21,7 +21,7 @@ public class UtilsTest {
     public void removeCRLF() throws IOException {
         String anyString = "Any \rStr\ning\r\n";
 
-        String stringifiedStream = Utils.stringify(new ByteArrayInputStream(anyString.getBytes()));
+        String stringifiedStream = IOUtils.stringify(new ByteArrayInputStream(anyString.getBytes()));
 
         assertThat(stringifiedStream, is("Any String"));
     }
