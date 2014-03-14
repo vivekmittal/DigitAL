@@ -1,9 +1,8 @@
 package com.utils;
 
 public class CheckSum {
-    public static CheckSum of(String accountNo) {
+    public static CheckSum of(Integer accountNumber) {
         int checksum = 0;
-        int accountNumber = Integer.valueOf(accountNo);
 
         for (int i = 1; accountNumber != 0; i++) {
             checksum += (accountNumber % 10) * i;
@@ -13,13 +12,13 @@ public class CheckSum {
         return new CheckSum(checksum);
     }
 
-    private int checksum;
-
-    public boolean isValid() {
-        return this.checksum % 11 == 0;
-    }
+    private final int checksum;
 
     private CheckSum(int checksum) {
         this.checksum = checksum;
+    }
+
+    public boolean isValid() {
+        return this.checksum % 11 == 0;
     }
 }

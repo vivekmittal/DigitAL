@@ -50,8 +50,8 @@ public enum Digit {
 
     INVALID("?", -1);
 
-    private String digit;
-    private int value;
+    private final String digit;
+    private final int value;
 
     private Digit(String value, int aByte) {
         this.digit = value;
@@ -70,8 +70,8 @@ public enum Digit {
         return this.digit.equals(rawString);
     }
 
-    public static int WIDTH = 3;
-    public static int HEIGHT = 4;
+    public static final int WIDTH = 3;
+    public static final int HEIGHT = 4;
 
     public static Digit digitFor(final String rawString) {
         List<Digit> allDigits = Lists.newArrayList(values());

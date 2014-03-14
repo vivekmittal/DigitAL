@@ -8,8 +8,8 @@ import com.utils.CheckSum;
 import java.util.Collection;
 
 public class Account {
-    public static int NUMBER_OF_DIGITS_IN_ACCOUNT_NUMBER = 9;
-    private static String INVALID_DIGIT_CHARACTER = "?";
+    public static final int NUMBER_OF_DIGITS_IN_ACCOUNT_NUMBER = 9;
+    private static final String INVALID_DIGIT_CHARACTER = "?";
 
     private String number;
     private final Digits digits;
@@ -33,7 +33,7 @@ public class Account {
             return false;
         }
 
-        return CheckSum.of(accountNumber).isValid();
+        return CheckSum.of(Integer.valueOf(accountNumber)).isValid();
     }
 
     private String generateAccountNumber() {
@@ -48,5 +48,9 @@ public class Account {
         });
 
         return Joiner.on("").join(stringDigits);
+    }
+
+    public String toString(){
+        return "Account Number: " + getAccountNumber();
     }
 }

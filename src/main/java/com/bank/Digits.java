@@ -1,6 +1,5 @@
 package com.bank;
 
-import com.bank.Digit;
 import com.google.common.base.Splitter;
 
 import java.util.List;
@@ -9,7 +8,7 @@ import static com.bank.Account.NUMBER_OF_DIGITS_IN_ACCOUNT_NUMBER;
 import static com.google.common.collect.Lists.newArrayList;
 
 public class Digits {
-    private String rawDigits;
+    private final String rawDigits;
 
     public Digits(String rawDigits) {
         this.rawDigits = rawDigits;
@@ -20,7 +19,7 @@ public class Digits {
 
         for (int i = 0; i < NUMBER_OF_DIGITS_IN_ACCOUNT_NUMBER; i++) {
             digits.add(
-                digitAt(i)
+                    digitAt(i)
             );
         }
 

@@ -11,9 +11,9 @@ import java.util.Collection;
 import java.util.List;
 
 public class Accounts {
-    private static int ACCOUNT_NUMBER_RAW_LENGTH = Account.NUMBER_OF_DIGITS_IN_ACCOUNT_NUMBER * Digit.WIDTH * Digit.HEIGHT;
+    private static final int ACCOUNT_NUMBER_RAW_LENGTH = Account.NUMBER_OF_DIGITS_IN_ACCOUNT_NUMBER * Digit.WIDTH * Digit.HEIGHT;
 
-    private static Function<String, Account> TO_ACCOUNTS = new Function<String, Account>() {
+    private static final Function<String, Account> TO_ACCOUNTS = new Function<String, Account>() {
         @Override
         public Account apply(String rawAccountNumber) {
             return new Account(rawAccountNumber);
