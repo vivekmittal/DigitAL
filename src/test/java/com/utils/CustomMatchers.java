@@ -27,12 +27,26 @@ public class CustomMatchers {
         return new TypeSafeMatcher<Account>() {
             @Override
             protected boolean matchesSafely(Account account) {
-                return account.isValid();
+                return account.status() == Account.Status.VALID;
             }
 
             @Override
             public void describeTo(Description description) {
                 description.appendText("The account number to be valid");
+            }
+        };
+    }
+
+    public static Matcher<? super Account> illegal() {
+        return new TypeSafeMatcher<Account>() {
+            @Override
+            protected boolean matchesSafely(Account account) {
+                return account.status() == Account.Status.ILLEGAL;
+            }
+
+            @Override
+            public void describeTo(Description description) {
+                description.appendText("The account number to be illegal");
             }
         };
     }

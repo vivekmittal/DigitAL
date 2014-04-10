@@ -17,7 +17,7 @@ public class App {
 
             for (Account account : Accounts.from(dataFile)) {
                 System.out.printf(
-                        "Account Number: %s, %s \n", account.getAccountNumber(), account.isValid() ? "VALID" : "INVALID"
+                        "Account Number: %s, %s \n", account.getAccountNumber(), account.status()
                 );
             }
 

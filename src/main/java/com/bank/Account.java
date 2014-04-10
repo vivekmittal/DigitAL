@@ -26,14 +26,12 @@ public class Account {
         return number;
     }
 
-    public boolean isValid() {
-        String accountNumber = getAccountNumber();
+    public Status status() {
+        return Status.forThe(getAccountNumber());
+    }
 
-        if (accountNumber.contains(INVALID_DIGIT_CHARACTER)) {
-            return false;
-        }
-
-        return CheckSum.of(Integer.valueOf(accountNumber)).isValid();
+    public String toString() {
+        return "Account Number: " + getAccountNumber();
     }
 
     private String generateAccountNumber() {
@@ -50,7 +48,23 @@ public class Account {
         return Joiner.on("").join(stringDigits);
     }
 
-    public String toString(){
-        return "Account Number: " + getAccountNumber();
+    public enum Status {
+        VALID,
+        ERROR,
+        ILLEGAL;
+
+        public static Status forThe(String accountNumber) {
+            return isIllegal(accountNumber)
+                    ? ILLEGAL
+                    : !isValid(accountNumber) ? ERROR : VALID;
+        }
+
+        private static boolean isIllegal(String accountNumber) {
+            return accountNumber.contains(INVALID_DIGIT_CHARACTER);
+        }
+
+        private static boolean isValid(String accountNumber) {
+            return CheckSum.of(Integer.valueOf(accountNumber)).isValid();
+        }
     }
 }

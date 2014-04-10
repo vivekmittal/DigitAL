@@ -2,6 +2,7 @@ package com.bank;
 
 import org.testng.annotations.Test;
 
+import static com.utils.CustomMatchers.illegal;
 import static com.utils.CustomMatchers.valid;
 import static com.utils.CustomMatchers.number;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -20,7 +21,7 @@ public class AccountTest {
         assertThat(account, number(is("234567890")));
     }
 
-    public void newAccountWithInvalidDigits() {
+    public void illegalAccount() {
         String rawDigits = " _  _     _  _  _  _  _  _ "
                          + " _| _|| ||_ |_   ||_||_|  |"
                          + "|_  _|  | _||_|  ||_| _||_|";
@@ -28,6 +29,7 @@ public class AccountTest {
         Account account = new Account(rawDigits);
 
         assertThat(account, number(is("23?56789?")));
+        assertThat(account, is(illegal()));
     }
 
     public void validAccountNumber() {
