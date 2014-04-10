@@ -30,7 +30,7 @@ USAGE:
         System.out.printf(
                 "Account Number: %s, %s \n", 
                             account.getAccountNumber(), 
-                            account.isValid() ? "VALID" : "INVALID"
+                            account.status()
         );
     }
 </pre>
