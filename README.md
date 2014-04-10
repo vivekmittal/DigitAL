@@ -55,5 +55,5 @@ TEST:
 
 MORE DETAILS:
 -------
-This is a implementation of first two stories of the code kata hosted at http://codingdojo.org/cgi-bin/index.pl?KataBankOCR<br />
+This is a implementation of first three stories of the code kata hosted at http://codingdojo.org/cgi-bin/index.pl?KataBankOCR<br />
 Please visit the link for more details
