@@ -1,6 +1,8 @@
 DigitAL
 =======
 
+[![Build Status](https://travis-ci.org/vivekmittal/DigitAL.svg?branch=master)](https://travis-ci.org/vivekmittal/DigitAL)
+
 <b><i>Demostration of Fluent interfaces / TDD / Functional idioms applied with OOPS</i></b>
 
 A simple application to parse digits (from Pipes and underscores) and display the digit/number formed by the digit.
