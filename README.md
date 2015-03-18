@@ -26,14 +26,10 @@ USAGE:
 -------
 <pre>
     final String FILE_NAME = "data.txt";
-    File dataFile = new FileInputStream(FILE_NAME);
-    
-    for (Account account : Accounts.from(dataFile)) {
-        System.out.printf(
-                "Account Number: %s, %s \n", 
-                            account.getAccountNumber(), 
-                            account.status()
-        );
+    try (FileInputStream dataFile = new FileInputStream(FILE_NAME)) {
+        Accounts
+                .from(dataFile)
+                .forEach(System.out::println);
     }
 </pre>
 

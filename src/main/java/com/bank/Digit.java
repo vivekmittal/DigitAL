@@ -4,44 +4,44 @@ import com.google.common.collect.Lists;
 
 import java.util.List;
 
-
 public enum Digit {
-    ZERO(" _ " +
+    ZERO(   " _ " +
             "| |" +
             "|_|", 0),
-    ONE("   " +
+
+    ONE(    "   " +
             "  |" +
             "  |", 1),
 
-    TWO(" _ " +
+    TWO(    " _ " +
             " _|" +
             "|_ ", 2),
 
-    THREE(" _ " +
+    THREE(  " _ " +
             " _|" +
             " _|", 3),
 
-    FOUR("   " +
+    FOUR(   "   " +
             "|_|" +
             "  |", 4),
 
-    FIVE(" _ " +
+    FIVE(   " _ " +
             "|_ " +
             " _|", 5),
 
-    SIX(" _ " +
+    SIX(    " _ " +
             "|_ " +
             "|_|", 6),
 
-    SEVEN(" _ " +
+    SEVEN(  " _ " +
             "  |" +
             "  |", 7),
 
-    EIGHT(" _ " +
+    EIGHT(  " _ " +
             "|_|" +
             "|_|", 8),
 
-    NINE(" _ " +
+    NINE(   " _ " +
             "|_|" +
             " _|", 9),
 

@@ -30,7 +30,7 @@ public class Account {
     }
 
     public String toString() {
-        return "Account Number: " + getAccountNumber();
+        return String.format("Account Number: %s, %s", getAccountNumber(), status());
     }
 
     private String generateAccountNumber() {

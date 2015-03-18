@@ -19,7 +19,8 @@ import static org.hamcrest.collection.IsIterableContainingInOrder.contains;
 @Test
 public class DigitsTest {
     public void parseDigits() {
-        String rawDigits = " _  _     _  _  _  _  _  _ "
+        String rawDigits =
+                  " _  _     _  _  _  _  _  _ "
                 + " _| _||_||_ |_   ||_||_|| |"
                 + "|_  _|  | _||_|  ||_| _||_|";
 
