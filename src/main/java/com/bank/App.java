@@ -10,27 +10,16 @@ public class App {
     private static final Logger LOGGER = Logger.getLogger("Bank");
 
     public static void main(String[] args) {
-        FileInputStream dataFile = null;
+        try (FileInputStream dataFile = new FileInputStream(FILE_NAME)) {
 
-        try {
-            dataFile = new FileInputStream(FILE_NAME);
-
-            for (Account account : Accounts.from(dataFile)) {
-                System.out.printf(
-                        "Account Number: %s, %s \n", account.getAccountNumber(), account.status()
-                );
-            }
+            Accounts
+                    .from(dataFile)
+                    .forEach(account -> System.out.printf(
+                            "Account Number: %s, %s \n", account.getAccountNumber(), account.status()
+                    ));
 
         } catch (IOException ex) {
             LOGGER.log(Level.SEVERE, "Error Opening/Reading File - " + ex.getMessage());
-        } finally {
-            try {
-                if(dataFile != null) {
-                    dataFile.close();
-                }
-            } catch (IOException ex) {
-                LOGGER.log(Level.WARNING, "Error Closing File - " + ex.getMessage());
-            }
         }
     }
 }

@@ -3,9 +3,10 @@ package com.bank;
 import com.google.common.base.Splitter;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static com.bank.Account.NUMBER_OF_DIGITS_IN_ACCOUNT_NUMBER;
-import static com.google.common.collect.Lists.newArrayList;
 
 public class Digits {
     private final String rawDigits;
@@ -15,15 +16,10 @@ public class Digits {
     }
 
     public List<Digit> parse() {
-        List<Digit> digits = newArrayList();
-
-        for (int i = 0; i < NUMBER_OF_DIGITS_IN_ACCOUNT_NUMBER; i++) {
-            digits.add(
-                    digitAt(i)
-            );
-        }
-
-        return digits;
+        return IntStream
+                .range(0, NUMBER_OF_DIGITS_IN_ACCOUNT_NUMBER)
+                .mapToObj(i -> digitAt(i))
+                .collect(Collectors.toList());
     }
 
     private Digit digitAt(int position) {
