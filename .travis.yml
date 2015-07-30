@@ -4,3 +4,15 @@ jdk:
   - oraclejdk8
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+env:
+  global:
+   - secure: "WSR7oCGknOx5VxroVuyugiwodKl32DYb9pXOHY4P23dFYCA3BFUg3DZwnXFA4OYdIyqzRYoxXTM8L5ENza5O/KtBKpInxH+aEZv5z+1/S1CkI7/E5eZOuXAxnXTzCC91zurhYA92M6ZK1uhowGYJQ9nAlHOCQ3uA6fb0r63YKXI="
+addons:
+  coverity_scan:
+    project:
+      name: "vivekmittal/DigitAL"
+      description: "Build submitted via Travis CI"
+    notification_email: vmittal69@gmail.com
+    build_command_prepend: "mvn clean"
+    build_command:   "mvn -DskipTests=true compile"
+    branch_pattern: master
