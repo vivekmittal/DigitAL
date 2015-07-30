@@ -51,4 +51,14 @@ public class AccountTest {
 
         assertThat(account, is(not(valid())));
     }
+
+    public void toStringFormatting() {
+        String rawDigits = " _     _  _  _  _  _  _  _ "
+                         + " _||_||_ |_||_| _||_||_ |_ "
+                         + " _|  | _||_||_||_ |_||_| _|";
+
+        Account account = new Account(rawDigits);
+
+        assertThat(account.toString(), is("Account Number: 345882865, VALID"));
+    }
 }
