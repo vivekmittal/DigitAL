@@ -2,6 +2,7 @@ DigitAL
 =======
 
 [![Build Status](https://travis-ci.org/vivekmittal/DigitAL.svg?branch=master)](https://travis-ci.org/vivekmittal/DigitAL)
+[![codecov.io](http://codecov.io/github/vivekmittal/DigitAL/coverage.svg?branch=master)](http://codecov.io/github/vivekmittal/DigitAL?branch=master)
 
 <b><i>Demostration of Fluent interfaces / TDD / Functional idioms applied with OOPS</i></b>
 
