@@ -4,7 +4,7 @@ DigitAL
 [![Build Status](https://travis-ci.org/vivekmittal/DigitAL.svg?branch=master)](https://travis-ci.org/vivekmittal/DigitAL)
 [![codecov.io](http://codecov.io/github/vivekmittal/DigitAL/coverage.svg?branch=master)](http://codecov.io/github/vivekmittal/DigitAL?branch=master)
 [![Quality](https://img.shields.io/coverity/scan/5907.svg)](https://scan.coverity.com/projects/5907)
-[![License](http://img.shields.io/:license-gpl2-blue.svg)](https://github.com/vivekmittal/DigitAL/blob/master/LICENSE)
+[![License](http://img.shields.io/:license-apache-blue.svg)](https://github.com/vivekmittal/DigitAL/blob/master/LICENSE)
 
 <b><i>Demostration of Fluent interfaces / TDD / Functional idioms applied with OOPS</i></b>
 
